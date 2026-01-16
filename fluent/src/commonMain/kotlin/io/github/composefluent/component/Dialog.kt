@@ -196,11 +196,11 @@ fun ContentDialog(
             // Button Grid
             Box(Modifier.height(80.dp).padding(horizontal = 25.dp), Alignment.CenterEnd) {
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    if (closeButtonText != null) Button(
+                    AccentButton(
                         modifier = Modifier.weight(1f),
-                        onClick = { onButtonClick(ContentDialogButton.Close) }
+                        onClick = { onButtonClick(ContentDialogButton.Primary) }
                     ) {
-                        Text(closeButtonText)
+                        Text(primaryButtonText)
                     }
                     if (secondaryButtonText != null) Button(
                         modifier = Modifier.weight(1f),
@@ -208,11 +208,11 @@ fun ContentDialog(
                     ) {
                         Text(secondaryButtonText)
                     }
-                    AccentButton(
+                    if (closeButtonText != null) Button(
                         modifier = Modifier.weight(1f),
-                        onClick = { onButtonClick(ContentDialogButton.Primary) }
+                        onClick = { onButtonClick(ContentDialogButton.Close) }
                     ) {
-                        Text(primaryButtonText)
+                        Text(closeButtonText)
                     }
                 }
             }
